@@ -37,7 +37,7 @@ public class Sustentacion {
             System.out.println("4. Mostrar inventario");
             System.out.println("5. Realizar venta");
             System.out.println("6. Mostrar Ganancias totales");
-            System.out.println("7. Salir");
+            System.out.println("7. Salir\n");
             opcion = lector.nextInt();
 
             switch (opcion){
@@ -47,29 +47,33 @@ public class Sustentacion {
                 case 2: System.out.println("ingrese el nombre del producto");
                     int x=0;    
                     a = lector.next();
+                    System.out.println("");
                     for (int j=0;j<i;j++) {
                         x=arrayObjetos[j].Buscar(a);
                     }
                     if (x==0)
                         System.out.println("El producto no existe");
+                        System.out.println("");
                     break;
                 case 3:System.out.println("Ingrese el nombre del producto que desea eliminar");
                     int z=0;
                     a = lector.next();
+                    System.out.println("");
                     for (int j=0;j<i;j++)
                         z=arrayObjetos[j].Eliminar(a);
                     if (z==0)
-                        System.out.println("El producto no existe");
+                        System.out.println("El producto no existe\n");
                     break;
                 case 4: 
                     for (int j = 0; j < i; j++) {
                         arrayObjetos[j].Inventario();
                     }
                     break;
-                case 5: System.out.println("ingrese el nombre del producto\n");
+                case 5: System.out.println("ingrese el nombre del producto");
                         a = lector.next();
-                        System.out.println("ingrese el numero de ventas\n");
+                        System.out.println("\ningrese el numero de ventas");
                         b = lector.nextInt();
+                        System.out.println("");
                     for (int j = 0; j < i; j++) {
                         arrayObjetos[j].Venta(a,b);
                     }
@@ -81,9 +85,9 @@ public class Sustentacion {
                     break;
                 case 7: System.out.println("Adios");
                     break;    
-                default: System.out.println("Opción invalida");
+                default: System.out.println("Opción invalida\n");
             }
-        }while(opcion!=0);
+        }while(opcion!=7);
         
     }
 }
